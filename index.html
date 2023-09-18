@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My CV Michał Wojciechowski</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="shortcut icon" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/Porfilowe.png">
+  </head>
+
+  <body>
+    <!-- header design -->
+    <header class="header">
+
+      <a href="#" class="logo">Michał Wojciechowski CV</a>
+
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <nav class="navbar">
+          <a href="#home" class="active"><i class='bx bxs-home'></i> Home</a>
+          <a href="#about"><i class='bx bx-user'></i> About Me</a>
+          <a href="#activity"><i class='bx bx-slideshow'></i> My Activity</a>
+          <a href="#portfolio"><i class='bx bx-laptop' ></i> Project</a>
+       <!--   <a href="#creator"><i class='bx bx-wrench'></i> Creator</a>-->
+          <a href="#contact"><i class='bx bxs-phone' ></i> Contact</a>
+      </nav>
+
+    </header>
+    
+    <!-- Section Home -->
+
+    <section class="home" id="home">
+      <div class="home-content"> 
+        <div class="home-img">
+          <img src="/images/home4.png" alt="">
+        </div>
+        <h1>Michał Wojciechowski</h1>
+        <h3><span class="multiple-text"></span></h3>
+        <!--
+        <p>A student of the second degree in management at the Wroclaw University of Technology</p>
+        -->
+        <div class="social-media">
+          <a href="https://www.facebook.com/profile.php?id=100002635927955" target="_blank"><i class='bx bxl-facebook'></i></a>
+          <a href="https://github.com/WojciechowskiMichal" target="_blank"><i class='bx bxl-github'></i></a>
+          <a href="https://www.instagram.com/tadzik_woj/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+          <a href="https://www.linkedin.com/in/michał-tadeusz-wojciechowski/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section About Me -->
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="/images/home4.png" alt="">
+      </div>
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>Student</h3>
+        <p>I am an ambitious and energetic engineering graduate. I plan to continue my studies at the Wrocław University of Technology at the master's level in the field of Management. During the whole period of my studies I was involved in the projects and life of the Student Government, Academic Radio Luz and Student Club Bajer.</p>
+        <p><i class='bx bx-user'></i><b> Name</b> : Michał Wojciechowski</p>
+        <p><i class='bx bx-cake'></i><b > Age</b> : 23</p>
+        <p><i class='bx bxs-map-pin'></i><b> Address</b> : Wroclaw</p>
+        <p><i class='bx bxs-phone'></i><b> Phone</b> : (+48) 795 702 800</p>
+        <p><i class='bx bxs-envelope'></i></i><b> E-Mail</b> : mmmichal.wojciechowski@gmail.com</p>
+        <a href="/file/Michał Wojciechowski CV.pdf" target="_blank" class="btn">Download CV</a>
+      </div>
+    </section>
+
+    <!-- Section activity -->
+
+    <section class="activity" id="activity">
+      <h2 class="heading">My <span>Activity</span></h2>
+      <div class="activity-container">
+        <div class="tab">
+          <button class="tablinks" onmouseover="openActivity(event, 'Radio')"><h4><i class='bx bxs-radio'></i> Academic Radio Luz</h4></button>
+          <button class="tablinks" onmouseover="openActivity(event, 'Samorzad')"><h4><i class='bx bxs-user'></i> Student Government</h4></button>
+          <button class="tablinks" onmouseover="openActivity(event, 'Bajer')"><h4><i class='bx bxl-deezer'></i> Student Club Bajer</h4></button> 
+        </div>
+        <div class="tab-container">
+          <div id="Radio" class="tabcontent">
+            <h3><i class='bx bxs-radio'></i> Academic Radio Luz</h3>
+            <p>I started my activity at Academic Radio Luz in November 2019. At that time I joined the Popular Science Editorial Board. I completed my activity in January 2022. Throughout my activity, I conducted many live broadcasts as part of the "On Synapses" program. In addition, I gave many talks on Renewable Energy Sources, Scientific Circles such as PWR Racing Team, Aerospace PWr.</p>
+            <a href="https://radioluz.pl/podcasty/?author=mwojciechowski" target="_blank" class="btn">Read More</a>
+          </div>
+          
+          <div id="Samorzad" class="tabcontent">
+            <h3><i class='bx bxs-user'></i> Student Government</h3>
+            <p>I started working in the Student Government of the University of Technology in October 2019 and was active in the Promotion Committee until March 2023. During the entire activity, I was a Member of the Board of the Student Parliament for Promotion. During this period, I was involved in many projects such as Obóz Studentów PWr, I Love PWr, Otrzęsiny PW and many others.</p>
+            <a href="https://www.facebook.com/SamorzadPWr" target="_blank" class="btn">Read More</a>
+          </div>
+          
+          <div id="Bajer" class="tabcontent">
+            <h3><i class='bx bxl-deezer'></i> Student Club Bajer</h3>
+            <p>Activities in the Bajer Student Club began in 2022 during autumn recruitment. I then joined the DJ section run by qualified people. My current level of education in this field is beginner. Among DJs, I am known by my nickname "DJ Tadeo". My skills could be observed during the event at Ceregiele 2.0 and WOŚP at the Wrocław University of Environmental and Life Sciences.</p>
+            <a href="https://www.facebook.com/Klub.Studencki.Bajer" target="_blank" class="btn">Read More</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Portfolio -->
+
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Latest <span>Project</span></h2>
+      <div class="portfolio-container">
+
+        <div class="portfolio-box">
+          <img src="/images/Portfolio/portfolio1.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Coming Soon</h4>
+            <p>Coming Soon</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="/images/Portfolio/portfolio2.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Coming Soon</h4>
+            <p>Coming Soon</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="portfolio-box">
+          <img src="/images/Portfolio/portfolio3.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Coming Soon</h4>
+            <p>Coming Soon</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <!--
+        <div class="portfolio-box">
+          <img src="/images/portfolio4.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Jestem ambitnym i pełnym energii absolwentem studiów inżynierskich.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="/images/portfolio5.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Jestem ambitnym i pełnym energii absolwentem studiów inżynierskich.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="/images/portfolio6.jpg" alt="">
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Jestem ambitnym i pełnym energii absolwentem studiów inżynierskich.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        --> 
+      </div>
+    </section>
+
+    <!-- Section Creator 
+    <section class="creator" id="creator">
+      <h2 class="heading">Website <span>Creator</span></h2>
+      <div class="creator-container">
+          <img src="/images/home.png" alt="">
+          <h3>Michał Wojciechowski</h3>
+          <br>
+          <h4><span>Frontend Developer</span></h4>
+      </div>
+      <div class="creator-container-skils">
+        <h3>Skills</h3>
+        <h4>Communication</h4>
+        <div class="progress">
+          <div class="progress-value"></div>
+        </div>
+        <h4>HTML</h4>
+        <div class="progress">
+          <div class="progress-value2"></div>
+        </div>
+        <h4>CSS</h4>
+        <div class="progress">
+          <div class="progress-value3"></div>
+        </div>
+        <h4>JS</h4>
+        <div class="progress">
+          <div class="progress-value4"></div>
+        </div>
+      </div>
+      <br>
+      <br>
+    </section>
+  -->
+
+    <!-- Section Contact -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me</span></h2>
+      <div id="message-container"></div>
+      <form action="/php/send_form.php" method="POST">
+        <div class="input-box">
+          <input type="text" name="full_name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="input-box">
+          <input type="tel" name="mobile_number" placeholder="Mobile Number">
+          <input type="text" name="email_subject" placeholder="Email Subject">
+        </div>
+        <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <input type="submit" value="Send Message" class="btn">
+      </form>
+    </section>
+<!--
+    <div id="powiadomienie" class="powiadomienie">
+      <span class="zamknij" onclick="zamknijPowiadomienie()">&times;</span>
+      <span id="message-text"></span>
+    </div>
+  
+  -->
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2023 by Michał Wojciechowski</p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
