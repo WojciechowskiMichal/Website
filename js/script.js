@@ -45,10 +45,10 @@ ScrollReveal({
     delay: 200
 });
 
-ScrollReveal().reveal('.home-content, .heading, .tab', { origin: 'top' });
+ScrollReveal().reveal('.home-content, .heading, .tab, .timeline', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .activity-container, .portfolio-box, .contact form, .home-content h1', { origin: 'bottom' });    
-ScrollReveal().reveal(' .about-img, .creator-container', { origin: 'left' });
-ScrollReveal().reveal('.home-content p, .about-content, .creator-container-skils', { origin: 'right' });
+ScrollReveal().reveal(' .about-img, .creator-container, .content2, .left', { origin: 'left' });
+ScrollReveal().reveal('.home-content p, .about-content, .creator-container-skils, .content, .right', { origin: 'right' });
 
 /*==================== typed js ====================*/
 const typed = new Typed('.multiple-text', {
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Wyślij dane formularza za pomocą AJAX
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "new/php/send_form.php", true);
+          xhr.open("POST", "/php/send_form.php", true);
           xhr.onreadystatechange = function () {
               if (xhr.readyState === 4) {
                   if (xhr.status === 200) {
