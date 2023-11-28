@@ -96,11 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (messageContainer) {
         messageContainer.style.display = "none";
-
-        // Obsługa wysłania formularza za pomocą AJAX
+        
         var form = document.querySelector("form");
         form.addEventListener("submit", function (event) {
-            event.preventDefault(); // Zatrzymaj domyślne zachowanie formularza
+            event.preventDefault();
         
             var formData = new FormData(form);
         
@@ -111,16 +110,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (xhr.status === 200) {
                         var response = JSON.parse(xhr.responseText);
                         if (response.success) {
-                            messageText.innerText = response.message; // Ustaw tekst powiadomienia
-                            powiadomienie.style.display = "block"; // Wyświetl powiadomienie
+                            messageText.innerText = response.message;
+                            powiadomienie.style.display = "block";
         
-                            form.reset(); // Dodaj tę linię do wyczyszczenia formularza
+                            form.reset();
                         } else {
                             // Obsługa błędu
                             alert("Wystąpił błąd: " + response.message);
                         }
                     } else {
-                        // Obsługa błędu zapytania AJAX
                         alert("Wystąpił błąd: " + xhr.status);
                     }
                 }
