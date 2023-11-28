@@ -37,7 +37,6 @@ window.onscroll = () => {
 };
 
 /*==================== scroll reveal ====================*/
-
 ScrollReveal({
     // reset: true,
     distance: '80px',
@@ -59,7 +58,7 @@ const typed = new Typed('.multiple-text', {
     loop: true
 });
 
-  function openActivity(evt, activityName) {
+function openActivity(evt, activityName) {
     var tabcontent = document.getElementsByClassName("tabcontent");
   
     for (var i = 0; i < tabcontent.length; i++) {
@@ -77,60 +76,61 @@ const typed = new Typed('.multiple-text', {
     evt.currentTarget.className += " active";
   
     document.querySelector(".tab-container").style.display = "block";
-  }
-  
-  function updateProgressBar(progress) {
+}
+
+function updateProgressBar(progress) {
     const progressBar = document.getElementById("progress-bar");
     progressBar.style.width = progress + "%";
     progressBar.innerHTML = progress + "%";
 }
 
 function zamknijPowiadomienie() {
-  var powiadomienie = document.getElementById("powiadomienie");
-  powiadomienie.style.display = "none";
-}
-
-function zamknijPowiadomienie() {
-  var powiadomienie = document.getElementById("powiadomienie");
-  powiadomienie.style.display = "none";
+    var powiadomienie = document.getElementById("powiadomienie");
+    powiadomienie.style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var messageContainer = document.getElementById("message-container");
-  var powiadomienie = document.getElementById("powiadomienie");
-  var messageText = document.getElementById("message-text");
+    var messageContainer = document.getElementById("message-container");
+    var powiadomienie = document.getElementById("powiadomienie");
+    var messageText = document.getElementById("message-text");
 
-  if (messageContainer) {
-      messageContainer.style.display = "none";
+    if (messageContainer) {
+        messageContainer.style.display = "none";
 
-      // Obsługa wysłania formularza za pomocą AJAX
-      var form = document.querySelector("form");
-      form.addEventListener("submit", function (event) {
-          event.preventDefault(); // Zatrzymaj domyślne zachowanie formularza
-
-          var formData = new FormData(form);
-
-          // Wyślij dane formularza za pomocą AJAX
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "/php/send_form.php", true);
-          xhr.onreadystatechange = function () {
-              if (xhr.readyState === 4) {
-                  if (xhr.status === 200) {
-                      var response = JSON.parse(xhr.responseText);
-                      if (response.success) {
-                          messageText.innerText = response.message;
-                          powiadomienie.style.display = "block";
-                      } else {
-                          // Obsługa błędu
-                          alert("Wystąpił błąd: " + response.message);
-                      }
-                  } else {
-                      // Obsługa błędu zapytania AJAX
-                      alert("Wystąpił błąd: " + xhr.status);
-                  }
-              }
-          };
-          xhr.send(formData);
-      });
-  }
+        // Obsługa wysłania formularza za pomocą AJAX
+        var form = document.querySelector("form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Zatrzymaj domyślne zachowanie formularza
+        
+            var formData = new FormData(form);
+        
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/php/send_form.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.success) {
+                            messageText.innerText = response.message; // Ustaw tekst powiadomienia
+                            powiadomienie.style.display = "block"; // Wyświetl powiadomienie
+        
+                            form.reset(); // Dodaj tę linię do wyczyszczenia formularza
+                        } else {
+                            // Obsługa błędu
+                            alert("Wystąpił błąd: " + response.message);
+                        }
+                    } else {
+                        // Obsługa błędu zapytania AJAX
+                        alert("Wystąpił błąd: " + xhr.status);
+                    }
+                }
+            };
+            xhr.send(formData);
+        });
+        
+    }
 });
+
+function enableSubmit() {
+    document.getElementById('submit-button').disabled = false;
+}
