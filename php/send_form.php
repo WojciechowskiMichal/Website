@@ -1,40 +1,55 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $response = $_POST['g-recaptcha-response'];
-    $secretKey = "Zastąp ReCAPTURE";
+    $secretKey = "Code ReCAPTCHa"; // Code ReCAPTCHa
     $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secretKey}&response={$response}");
     $verified = json_decode($verify);
 
     if ($verified->success) {
+        $full_name = $_POST["full_name"]; //Full Name 
+        $email = $_POST["email"]; //Mail 
+        $mobile_number = $_POST["mobile_number"]; //Mobile Phone
+        $message = $_POST["message"]; //Message
 
-        $full_name = $_POST["full_name"];
-        $email = $_POST["email"];
-        $mobile_number = $_POST["mobile_number"];
-        $email_subject = $_POST["email_subject"];
-        $message = $_POST["message"];
+        //Email Validations
 
-        $to = "Zastąp adresem email odbiorcy"; 
-        $subject = "Formularz kontaktowy: $email_subject";
+        if (strlen($full_name) > 35) {
+            echo json_encode(array('success' => false, 'message' => 'Full Name must not exceed 35 characters.'));
+            exit;
+        }
+
+        if (strlen($email) > 50) {
+            echo json_encode(array('success' => false, 'message' => 'Email must not exceed 50 characters.'));
+            exit;
+        }
+
+        if (!preg_match("/^\d{0,9}$/", $mobile_number)) {
+            echo json_encode(array('success' => false, 'message' => 'Mobile Number must be up to 9 digits.'));
+            exit;
+        }
+
+        if (strlen($message) > 250) {
+            echo json_encode(array('success' => false, 'message' => 'Message must not exceed 250 characters.'));
+            exit;
+        }
+
+        $to = "michal@michalwojciechowski.pl"; //Here you enter the email address to which emails should be sent
+        $subject = "Formularz kontaktowy: {$_POST["email_subject"]}";
         $headers = "From: $email";
-        $message_body = "Imię i nazwisko: $full_name\n";
+        $message_body = "Imię i Nazwisko: $full_name\n";
         $message_body .= "Email: $email\n";
         $message_body .= "Numer telefonu: $mobile_number\n";
         $message_body .= "Wiadomość:\n$message";
 
-
         if (mail($to, $subject, $message_body, $headers)) {
-            $response = array('success' => true, 'message' => 'Wiadomość została wysłana!');
-            echo json_encode($response);
+            echo json_encode(array('success' => true, 'message' => 'Message was sent!'));
         } else {
-            $response = array('success' => false, 'message' => 'Przepraszamy, wystąpił błąd podczas wysyłania wiadomości.');
-            echo json_encode($response);
+            echo json_encode(array('success' => false, 'message' => 'Sorry, an error occurred while sending your message.'));
         }
     } else {
-        $response = array('success' => false, 'message' => 'Proszę zaznaczyć ReCAPTCHA.');
-        echo json_encode($response);
+        echo json_encode(array('success' => false, 'message' => 'Please select ReCAPTCHA.'));
     }
 } else {
-    $response = array('success' => false, 'message' => 'Wysyłanie formularza nie jest dozwolone.');
-    echo json_encode($response);
+    echo json_encode(array('success' => false, 'message' => 'Submitting the form is not allowed.'));
 }
 ?>
